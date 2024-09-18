@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="esti-op.css">
+    <title>Operaciones</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Operaciones con 2 números</h1>
+        <p>Haz clic en los botones para ingresar los números y realizar las operaciones.</p>
+
+        <!-- Botón para ingresar los números -->
+        <button onclick="ingresarNumeros()">Ingresar Números</button>
+    
+        <!-- Botón para realizar la operación según la iteración -->
+        <button onclick="realizarOperacion()">Realizar Operación</button>
+
+        <p id="resultado"></p>
+
+        <!-- Contenedor donde se mostrarán las operaciones y resultados -->
+        <div id="operaciones"></div>
+    </div>
+
+    <script>
+        let numero1, numero2;
+        let iteracion = 1;
+
+        // Función para ingresar números mediante un cuadro de diálogo
+        function ingresarNumeros() {
+            numero1 = parseFloat(prompt("Introduce el primer número:"));
+            numero2 = parseFloat(prompt("Introduce el segundo número:"));
+            document.getElementById("resultado").innerHTML = "¡Números ingresados correctamente! Presiona el botón realizar operación.";
+            iteracion = 1;
+        }
+
+        // Función para realizar operaciones
+        function realizarOperacion() {
+            let resultado = 0;
+            let operacion='';
+            switch(iteracion) {
+                case 1:
+                    resultado = numero1 + numero2;
+                    alert("Suma: " + numero1 + " + " + numero2 + " = " + resultado);
+                    operacion = "Suma: " + numero1 + " + " + numero2 + " = " + resultado;
+                    break;
+                case 2:
+                    resultado = numero1 - numero2;
+                    alert("Resta: " + numero1 + " - " + numero2 + " = " + resultado);
+                    operacion = "Resta: " + numero1 + " - " + numero2 + " = " + resultado;
+                    break;
+                case 3:
+                    resultado = numero1 * numero2;
+                    alert("Multiplicación: " + numero1 + " * " + numero2 + " = " + resultado);
+                    operacion = "Multiplicación: " + numero1 + " * " + numero2 + " = " + resultado;
+                    break;
+                case 4:
+                    if (numero2 !== 0) {
+                        resultado = numero1 / numero2;
+                        alert("División: " + numero1 + " / " + numero2 + " = " + resultado);
+                        operacion = "División: " + numero1 + " / " + numero2 + " = " + resultado;
+                    } else {
+                        alert("Error: No se puede dividir por cero.");
+                        operacion = "Error: No se puede dividir por cero."
+                    }
+                    break;
+                case 5:
+                    if (numero2 !== 0) {
+                        resultado = numero1 % numero2;
+                        alert("Módulo: " + numero1 + " % " + numero2 + " = " + resultado);
+                        operacion = "Módulo: " + numero1 + " % " + numero2 + " = " + resultado;
+                    } else {
+                        alert("Error: No se puede calcular el módulo con divisor cero.");
+                        operacion = "Error: No se puede calcular el módulo con divisor cero."
+                    }
+                    break;
+                default:
+                    alert("Todas las operaciones han sido completadas.");
+                    operacion = "Todas las operaciones han sido completadas.";
+                    document.getElementById("operaciones").innerHTML += "<p>" + operacion + "</p>";
+                    return;
+            }
+            iteracion++;
+
+            // Mostrar el resultado de la operación en la página
+            document.getElementById("operaciones").innerHTML += "<p>" + operacion + "</p>";
+        }
+    </script>
+</body>
+</html>

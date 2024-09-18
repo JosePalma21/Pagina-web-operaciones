@@ -1,0 +1,89 @@
+/* Estilo básico para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Contenedor principal para centrar los elementos */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el título principal */
+h1 {
+    color: #007bff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los botones */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #069df5fa;
+}
+
+button:active {
+    background-color: #007bff;
+}
+
+/* Estilo para el texto de resultado */
+#resultado {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* Estilo para el contenedor de operaciones */
+#operaciones {
+    margin-top: 30px;
+    text-align: left;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+#operaciones p {
+    font-size: 1rem;
+    padding: 8px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
